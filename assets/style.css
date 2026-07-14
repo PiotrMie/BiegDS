@@ -243,7 +243,8 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
 .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 8vw; align-items: center; }
 .intro-visual { min-height: 530px; position: relative; }
 .photo-placeholder { height: 100%; min-height: 530px; position: relative; overflow: hidden; border-radius: 5px 70px 5px 5px; box-shadow: var(--shadow); }
-.photo-placeholder svg { width: 100%; height: 100%; object-fit: cover; }
+.photo-placeholder svg,
+.photo-placeholder img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .photo-placeholder > span { padding: 9px 13px; position: absolute; left: 18px; bottom: 18px; color: #fff; background: rgba(18,57,74,.78); border-radius: 4px; font-size: 10px; text-transform: uppercase; }
 .stat-card { width: 180px; height: 145px; position: absolute; right: -28px; bottom: -28px; display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; background: var(--orange); box-shadow: 0 22px 45px rgba(239,139,45,.27); }
 .stat-card b { font-size: 64px; line-height: 1; }

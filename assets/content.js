@@ -1,10 +1,14 @@
 /*
   EDYCJA STRONY BEZ ZNAJOMOŚCI PROGRAMOWANIA
   ==========================================
-  1. Link do zapisów zmieniasz w polu registrationUrl.
-  2. Zdjęcia podmieniasz w folderze assets/img, najlepiej zostawiając te same nazwy plików.
-  3. Opisy dystansów zmieniasz poniżej w sekcji distances.
-  4. Gdy pojawi się trasa półmaratonu, wpisz ścieżkę w routeImage, np. "assets/img/trasa-polmaraton.jpg".
+  Wszystkie najważniejsze teksty i zdjęcia edytujesz w tym pliku.
+
+  Zasady:
+  - Teksty wpisuj między cudzysłowami.
+  - Zdjęcia podmieniaj w folderze assets/img, najlepiej zostawiając te same nazwy plików.
+  - Link do zapisów zmieniasz w polu registrationUrl.
+  - Godziny programu zmieniasz w sekcji timeline.
+  - Pytania i odpowiedzi zmieniasz w sekcji faq.
 */
 
 window.BDS_CONFIG = {
@@ -13,12 +17,86 @@ window.BDS_CONFIG = {
   images: {
     heroLogo: "assets/img/hero.jpg",
     headerLogo: "assets/img/logo-male.jpg",
+    lastEdition: "assets/img/last-edition.jpg",
     shirt: "assets/img/koszulka.jpg",
     route5: "assets/img/trasa-5.jpg",
-    route10: "assets/img/trasa-10.jpg"
+    route10: "assets/img/trasa-10.jpg",
+    routeNordic: "assets/img/trasa-nordic.jpg"
+  },
+  meta: {
+    title: "Półmaraton Doliną Samy",
+    description: "Półmaraton Doliną Samy, Pyrlandzka Dycha i Piątka."
+  },
+  nav: {
+    ariaLabel: "Główna nawigacja",
+    items: [
+      { label: "O biegu", href: "#o-biegu" },
+      { label: "Dystanse", href: "#dystanse" },
+      { label: "Program", href: "#program" },
+      { label: "Trasa", href: "#trasa" },
+      { label: "FAQ", href: "#faq" }
+    ],
+    cta: "Zapisz się"
+  },
+  hero: {
+    eyebrow: "14. edycja",
+    location: "Kaźmierz • Wielkopolska",
+    title: "Pobiegnij",
+    titleAccent: "Doliną Samy",
+    lead: "Sportowe emocje, lokalna energia i trasa, do której chce się wracać. Wybierz swój dystans i spotkajmy się na starcie.",
+    primaryButton: "Zapisz się na bieg",
+    secondaryButton: "Poznaj dystanse",
+    meta: [
+      { value: "21,097 km", label: "Półmaraton" },
+      { value: "10 km", label: "Pyrlandzka Dycha" },
+      { value: "5 km", label: "Piątka i Nordic Walking" }
+    ],
+    imageAlt: "Półmaraton Doliną Samy, Pyrlandzka Dycha i Piątka - 13 września 2026",
+    scrollCue: "Przewiń"
+  },
+  countdown: {
+    kicker: "Następna edycja",
+    title: "Do zobaczenia na starcie!",
+    dateLabel: "Termin wydarzenia:",
+    dateText: "13 września 2026",
+    units: {
+      days: "dni",
+      hours: "godz.",
+      minutes: "min.",
+      seconds: "sek."
+    }
+  },
+  intro: {
+    kicker: "Bieg z charakterem",
+    title: "Tu liczy się",
+    titleAccent: "każdy krok",
+    imageAlt: "Medale z poprzedniej edycji Półmaratonu Doliną Samy",
+    imageLabel: "poprzednia edycja",
+    statNumber: "14",
+    statText: "lat biegowej<br>historii",
+    heading: "Półmaraton Doliną Samy to więcej niż wynik na mecie.",
+    paragraph: "To lokalne święto sportu, stworzone dla doświadczonych biegaczy, debiutantów, rodzin i kibiców. Malownicza trasa prowadzi przez serce gminy Kaźmierz, łącząc sportową rywalizację z wyjątkową atmosferą.",
+    bullets: [
+      "Atestowane i różnorodne dystanse",
+      "Elektroniczny pomiar czasu",
+      "Medal i bogaty pakiet startowy",
+      "Strefa kibica i biegi dla dzieci"
+    ],
+    linkText: "Zobacz, co czeka na miejscu"
+  },
+  distancesSection: {
+    kicker: "Znajdź swój dystans",
+    title: "Jeden dzień.",
+    titleAccent: "Cztery wyzwania.",
+    labels: {
+      start: "Start",
+      limit: "Limit",
+      route: "Trasa"
+    }
   },
   distances: {
     half: {
+      tab: "Półmaraton",
       number: "21",
       decimal: ",097 km",
       tag: "Główny dystans",
@@ -32,6 +110,7 @@ window.BDS_CONFIG = {
       routeFallback: "Trasa dostępna wkrótce"
     },
     ten: {
+      tab: "10 km",
       number: "10",
       decimal: " km",
       tag: "Pyrlandzka Dycha",
@@ -45,6 +124,7 @@ window.BDS_CONFIG = {
       routeFallback: ""
     },
     five: {
+      tab: "5 km",
       number: "5",
       decimal: " km",
       tag: "Szybka leśna",
@@ -58,17 +138,93 @@ window.BDS_CONFIG = {
       routeFallback: ""
     },
     nw: {
-      number: "5",
+      tab: "Nordic Walking",
+      number: "10",
       decimal: " km",
-      tag: "Marsz po emocje",
+      tag: "Zabierz kijki",
       title: "Nordic Walking",
-      description: "Aktywny marsz w sportowej atmosferze wydarzenia. Szczegóły trasy można uzupełnić po publikacji regulaminu.",
+      description: "10 km z kijkami po trasie pełnej emocji. Dystans dla osób, które chcą aktywnie spędzić dzień w atmosferze biegowego święta.",
       start: "09:45",
       limit: "1,5 godz.",
-      route: "5 km",
+      route: "mapa Nordic Walking",
       button: "Zapisz się na Nordic Walking",
-      routeImage: "",
-      routeFallback: "Trasa Nordic Walking 5 km"
+      routeImage: "assets/img/trasa-nordic.jpg",
+      routeFallback: ""
     }
+  },
+  route: {
+    kicker: "Trasa pełna zieleni",
+    title: "Poznaj Dolinę Samy",
+    titleAccent: "z najlepszej strony",
+    paragraph: "Na stronie zawodnik szybko znajdzie mapy dystansów, informacje o punktach odżywczych oraz najważniejsze miejsca dla uczestników i kibiców.",
+    button: "Zobacz trasy",
+    stats: [
+      { value: "4", label: "punkty<br>odżywcze" },
+      { value: "82 m", label: "przewyższenia<br>łącznie" },
+      { value: "70%", label: "trasy wśród<br>zieleni" }
+    ],
+    gallery: [
+      { label: "10 km", image: "assets/img/trasa-10.jpg", alt: "Mapa trasy Pyrlandzka Dycha 10 km" },
+      { label: "5 km", image: "assets/img/trasa-5.jpg", alt: "Mapa trasy 5 km" },
+      { label: "Nordic Walking", image: "assets/img/trasa-nordic.jpg", alt: "Mapa trasy Nordic Walking 10 km" }
+    ],
+    coming: {
+      label: "21,097 km",
+      title: "Trasa dostępna wkrótce",
+      text: "Mapa półmaratonu zostanie dodana po publikacji przebiegu."
+    }
+  },
+  program: {
+    kicker: "Dzień zawodów",
+    title: "Wszystko w",
+    titleAccent: "dobrym rytmie",
+    timeline: [
+      { time: "07:00", label: "Otwarcie", title: "Biuro zawodów", text: "Odbiór numerów i pakietów startowych." },
+      { time: "08:30", label: "Rozgrzewka", title: "Wspólny trening", text: "Energetyczne przygotowanie w strefie startu." },
+      { time: "09:00", label: "Start główny", title: "Półmaraton", text: "21,097 km przez Dolinę Samy.", highlight: true },
+      { time: "09:30", label: "Kolejne starty", title: "10 km, 5 km i NW", text: "Pyrlandzka Dycha, Piątka i Nordic Walking." },
+      { time: "12:30", label: "Finał", title: "Dekoracja i piknik", text: "Nagrody, muzyka i wspólne świętowanie." }
+    ]
+  },
+  kit: {
+    kicker: "Koszulka edycji 14",
+    title: "Zamów ją",
+    titleAccent: "przy rejestracji",
+    paragraph: "Pamiątkową koszulkę można dodać podczas zapisów online. To mocny element identyfikacji wydarzenia i dobry powód, żeby pokazać ją wyraźnie na stronie.",
+    imageAlt: "Koszulka dostępna do zamówienia przy rejestracji",
+    button: "Zamów przy rejestracji",
+    features: [
+      "Wyraźny nadruk wysokiej jakości",
+      "Nadruk na rękawie",
+      "Subtelny wzór na całości",
+      "Kontrastowe wykończenia"
+    ]
+  },
+  faq: {
+    kicker: "Przed startem",
+    title: "Najczęstsze",
+    titleAccent: "pytania",
+    items: [
+      { question: "Gdzie znajduje się biuro zawodów?", answer: "W tej sekcji warto wpisać dokładny adres, mapę dojazdu, godziny pracy oraz informacje o parkingach." },
+      { question: "Czy mogę zmienić wybrany dystans?", answer: "Zasady zmiany dystansu należy uzupełnić zgodnie z regulaminem organizatora." },
+      { question: "Co znajduje się w pakiecie startowym?", answer: "Koszulka, numer startowy z chipem, medal po ukończeniu biegu oraz świadczenia regeneracyjne." },
+      { question: "Czy na miejscu będzie parking i depozyt?", answer: "Takie informacje warto pokazać na osobnej, prostej mapie sytuacyjnej przed wydarzeniem." }
+    ]
+  },
+  signup: {
+    kicker: "Gotowy na wyzwanie?",
+    title: "Twoja meta zaczyna się",
+    titleAccent: "tutaj.",
+    paragraph: "Wybierz dystans, zapisz się i zacznij przygotowania do kolejnej edycji.",
+    button: "Przejdź do zapisów"
+  },
+  footer: {
+    columnTitle: "Najważniejsze",
+    contactTitle: "Kontakt",
+    email: "sportowykazmierz@wp.pl",
+    facebookLabel: "Facebook ↗",
+    facebookUrl: "https://www.facebook.com/PDSiPDP/",
+    note: "Półmaraton Doliną Samy, Pyrlandzka Dycha i Piątka.",
+    copyright: "Półmaraton Doliną Samy"
   }
 };

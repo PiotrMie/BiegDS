@@ -15,9 +15,11 @@ Co można kliknąć:
 
 Jak edytować za rok:
 - Najprościej podmień pliki w folderze assets/img, zachowując nazwy:
-  hero.jpg, logo-male.jpg, trasa-10.jpg, trasa-5.jpg, koszulka.jpg.
-- Link do zapisów, datę wydarzenia i opisy dystansów zmienisz w pliku:
-  assets/content.js.
+  hero.jpg, logo-male.jpg, last-edition.jpg, trasa-10.jpg, trasa-5.jpg,
+  trasa-nordic.jpg, koszulka.jpg.
+- Wszystkie główne teksty strony zmienisz w pliku assets/content.js:
+  menu, hero, odliczanie, opis wydarzenia, dystanse, trasy, harmonogram,
+  koszulka, FAQ, sekcja zapisów, stopka i linki.
 - Jeśli pojawi się mapa półmaratonu, dodaj zdjęcie do assets/img i wpisz
   jego ścieżkę w assets/content.js przy polu half -> routeImage.
 
