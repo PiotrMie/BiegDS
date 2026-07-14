@@ -109,8 +109,7 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   align-items: center;
   isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(255,253,247,.98) 0%, rgba(255,253,247,.9) 42%, rgba(223,243,251,.62) 100%),
-    repeating-linear-gradient(110deg, transparent 0 12px, rgba(63,154,196,.055) 12px 14px);
+    linear-gradient(90deg, rgba(255,253,247,.98) 0%, rgba(255,253,247,.9) 42%, rgba(223,243,251,.62) 100%);
   overflow: hidden;
 }
 .hero::after {
@@ -207,16 +206,6 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   transform: rotate(8deg);
 }
 .edition-stamp b { display: block; margin-top: 5px; color: var(--orange); font-size: 38px; }
-.brush { position: absolute; z-index: 1; opacity: .84; filter: blur(.2px); transform: rotate(-15deg); }
-.brush::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(5deg, transparent 0 7px, rgba(255,255,255,.2) 7px 10px);
-}
-.brush-green { width: 48vw; height: 235px; right: -5vw; top: 12%; background: linear-gradient(90deg, transparent, #54ad58 16%, #237b3d 86%, transparent); clip-path: polygon(4% 26%,100% 0,94% 88%,0 100%,9% 69%); }
-.brush-blue { width: 38vw; height: 130px; right: 3vw; bottom: 14%; background: linear-gradient(90deg, transparent, #58a9cf 20%, #2d7fa7 90%, transparent); clip-path: polygon(0 32%,100% 0,91% 88%,7% 100%); }
-.brush-orange { width: 28vw; height: 90px; right: 21vw; bottom: 6%; background: linear-gradient(90deg, transparent, #f6bd3a 20%, #f47f4a 85%, transparent); clip-path: polygon(0 35%,100% 0,87% 84%,12% 100%); }
 .scroll-cue { position: absolute; left: 3vw; bottom: 28px; font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; transform: rotate(-90deg); transform-origin: left center; }
 .scroll-cue span { margin-left: 12px; font-size: 17px; }
 
@@ -615,8 +604,6 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .hero-art { min-height: 420px; margin-top: 20px; }
   .runner { max-height: 460px; }
   .hero-meta { display: grid; grid-template-columns: 1fr 1fr; }
-  .brush-green { width: 100vw; }
-  .brush-blue { width: 80vw; }
   .scroll-cue { display: none; }
   .countdown-section { padding: 35px 22px; flex-direction: column; align-items: flex-start; }
   .countdown { width: 100%; justify-content: space-between; gap: 6px; }

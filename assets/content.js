@@ -16,6 +16,7 @@ window.BDS_CONFIG = {
   eventDate: "2026-09-13T09:00:00",
   images: {
     heroLogo: "assets/img/hero.jpg",
+    heroTitleLogo: "assets/img/pobiegnij-dolina-samy-clean.png",
     headerLogo: "assets/img/logo-male-clean.png",
     eneaLogo: "assets/img/logo-enea-cropped.png",
     lastEdition: "assets/img/last-edition.jpg",
