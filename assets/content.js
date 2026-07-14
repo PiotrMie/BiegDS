@@ -34,7 +34,6 @@ window.BDS_CONFIG = {
       { label: "O biegu", href: "#o-biegu" },
       { label: "Dystanse", href: "#dystanse" },
       { label: "Program", href: "#program" },
-      { label: "Trasa", href: "#trasa" },
       { label: "FAQ", href: "#faq" }
     ],
     cta: "Zapisz się"
@@ -171,28 +170,6 @@ window.BDS_CONFIG = {
       button: "Zapisz się na Nordic Walking",
       routeImage: "assets/img/trasa-nordic.jpg",
       routeFallback: ""
-    }
-  },
-  route: {
-    kicker: "Trasa pełna zieleni",
-    title: "Poznaj Dolinę Samy",
-    titleAccent: "z najlepszej strony",
-    paragraph: "Na stronie zawodnik szybko znajdzie mapy dystansów, informacje o punktach odżywczych oraz najważniejsze miejsca dla uczestników i kibiców.",
-    button: "Zobacz trasy",
-    stats: [
-      { value: "4", label: "punkty<br>odżywcze" },
-      { value: "82 m", label: "przewyższenia<br>łącznie" },
-      { value: "70%", label: "trasy wśród<br>zieleni" }
-    ],
-    gallery: [
-      { label: "10 km", image: "assets/img/trasa-10.jpg", alt: "Mapa trasy Pyrlandzka Dycha 10 km" },
-      { label: "5 km", image: "assets/img/trasa-5.jpg", alt: "Mapa trasy 5 km" },
-      { label: "Nordic Walking", image: "assets/img/trasa-nordic.jpg", alt: "Mapa trasy Nordic Walking 10 km" }
-    ],
-    coming: {
-      label: "21,097 km",
-      title: "Trasa dostępna wkrótce",
-      text: "Mapa półmaratonu zostanie dodana po publikacji przebiegu."
     }
   },
   program: {

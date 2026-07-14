@@ -19,7 +19,7 @@ Jak edytować za rok:
   trasa-nordic.jpg, koszulka.jpg.
 - Wszystkie główne teksty strony zmienisz w pliku assets/content.js:
   menu, hero, odliczanie, Facebook, sponsorów, opis wydarzenia, dystanse,
-  trasy, harmonogram, koszulkę, FAQ, sekcję zapisów, stopkę i linki.
+  harmonogram, koszulkę, FAQ, sekcję zapisów, stopkę i linki.
 - Jeśli pojawi się mapa półmaratonu, dodaj zdjęcie do assets/img i wpisz
   jego ścieżkę w assets/content.js przy polu half -> routeImage.
 

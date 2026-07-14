@@ -341,6 +341,30 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   background: rgba(245,241,231,.78);
   overflow: hidden;
   transform: rotate(2deg);
+  cursor: default;
+  appearance: none;
+  padding: 0;
+}
+.distance-route-preview.is-clickable {
+  cursor: zoom-in;
+  border-style: solid;
+}
+.distance-route-preview.is-clickable::after {
+  content: "Kliknij, aby powiększyć";
+  padding: 7px 10px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  color: #fff;
+  background: rgba(18,57,74,.84);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.distance-route-preview:disabled {
+  color: inherit;
 }
 .distance-route-preview img {
   width: 100%;
@@ -499,12 +523,47 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
 .footer-note span { display: block; margin-top: 24px; }
 
 .modal { width: min(560px, calc(100% - 30px)); padding: 0; border: 0; border-radius: 10px; box-shadow: 0 30px 90px rgba(0,0,0,.32); }
+.modal.route-modal {
+  width: min(96vw, 980px);
+  max-width: 96vw;
+  max-height: 94vh;
+  overflow: hidden;
+  background: #fff;
+}
 .modal::backdrop { background: rgba(7,31,40,.7); backdrop-filter: blur(4px); }
 .modal-close { width: 40px; height: 40px; position: absolute; top: 12px; right: 12px; z-index: 2; border: 0; border-radius: 50%; color: var(--ink); background: #fff; font-size: 24px; cursor: pointer; }
 .modal-inner { padding: 55px 45px 45px; }
 .modal-inner .section-kicker { margin-bottom: 10px; }
 .modal-inner h2 { margin: 0 0 15px; font-size: 35px; letter-spacing: -.04em; }
 .modal-inner p { color: var(--muted); line-height: 1.7; }
+.route-modal-inner {
+  width: 100%;
+  height: min(94vh, 960px);
+  padding: 18px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+  overflow: hidden;
+}
+.route-modal-inner h2 {
+  margin: 0;
+  padding-right: 54px;
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -.03em;
+}
+.route-modal-inner img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #07150f;
+  justify-self: center;
+  align-self: center;
+}
 .mini-map { height: 230px; margin-top: 22px; position: relative; border-radius: 6px; background: #e9f0e3; overflow: hidden; }
 .mini-map::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(47,116,61,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(47,116,61,.12) 1px, transparent 1px); background-size: 30px 30px; }
 .mini-map svg { width: 90%; height: 90%; margin: 3% 5%; position: relative; fill: none; stroke: var(--green); stroke-width: 10; stroke-dasharray: 3 14; stroke-linecap: round; }
@@ -595,6 +654,18 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .site-footer { grid-template-columns: 1fr; }
   .footer-brand, .footer-note { grid-column: auto; }
   .modal-inner { padding: 50px 25px 30px; }
+  .modal.route-modal {
+    width: calc(100vw - 18px);
+    max-width: calc(100vw - 18px);
+    max-height: calc(100vh - 18px);
+  }
+  .route-modal-inner {
+    height: calc(100vh - 18px);
+    padding: 12px;
+  }
+  .route-modal-inner h2 {
+    font-size: 18px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

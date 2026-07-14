@@ -90,38 +90,6 @@ function renderKitFeatures() {
   }));
 }
 
-function renderRouteStats() {
-  const wrapper = document.querySelector("[data-route-stats]");
-  if (!wrapper || !siteConfig.route?.stats) return;
-  wrapper.replaceChildren(...siteConfig.route.stats.map((item) => {
-    const div = createElement("div");
-    div.append(createElement("b", { text: item.value }), createElement("span", { html: item.label }));
-    return div;
-  }));
-}
-
-function renderRouteGallery() {
-  const wrapper = document.querySelector("[data-route-gallery]");
-  if (!wrapper || !siteConfig.route) return;
-  const cards = (siteConfig.route.gallery || []).map((item) => {
-    const article = createElement("article");
-    article.append(createElement("span", { text: item.label }), createElement("img", { src: item.image, alt: item.alt }));
-    return article;
-  });
-
-  if (siteConfig.route.coming) {
-    const coming = createElement("article", { className: "route-coming" });
-    coming.append(
-      createElement("span", { text: siteConfig.route.coming.label }),
-      createElement("b", { text: siteConfig.route.coming.title }),
-      createElement("p", { text: siteConfig.route.coming.text })
-    );
-    cards.push(coming);
-  }
-
-  wrapper.replaceChildren(...cards);
-}
-
 function renderTimeline() {
   const wrapper = document.querySelector("[data-timeline]");
   if (!wrapper || !siteConfig.program?.timeline) return;
@@ -220,20 +188,32 @@ const card = document.querySelector(".distance-card");
 const routePreview = card?.querySelector(".distance-route-preview");
 const routePreviewImage = routePreview?.querySelector("img");
 const routePreviewText = routePreview?.querySelector("p");
+let activeRouteImage = null;
+let activeRouteTitle = "";
 
 function updateRoutePreview(item) {
   if (!routePreviewImage || !routePreviewText) return;
   if (item.routeImage) {
+    activeRouteImage = item.routeImage;
+    activeRouteTitle = item.title;
     routePreviewImage.src = item.routeImage;
     routePreviewImage.alt = `Mapa trasy: ${item.title}`;
     routePreviewImage.hidden = false;
     routePreviewText.hidden = true;
+    routePreview.disabled = false;
+    routePreview.classList.add("is-clickable");
+    routePreview.setAttribute("aria-label", `Powiększ mapę trasy: ${item.title}`);
   } else {
+    activeRouteImage = null;
+    activeRouteTitle = "";
     routePreviewImage.removeAttribute("src");
     routePreviewImage.alt = "";
     routePreviewImage.hidden = true;
     routePreviewText.hidden = false;
     routePreviewText.textContent = item.routeFallback || "Trasa dostępna wkrótce";
+    routePreview.disabled = true;
+    routePreview.classList.remove("is-clickable");
+    routePreview.setAttribute("aria-label", item.routeFallback || "Trasa dostępna wkrótce");
   }
 }
 
@@ -337,13 +317,29 @@ function setupModal() {
         createButtonLink("Przejdź do zapisów", registrationUrl)
       );
       return wrapper;
+    },
+    route() {
+      const wrapper = createElement("div", { className: "route-modal-inner" });
+      wrapper.append(
+        createElement("h2", { text: activeRouteTitle || "Mapa trasy" }),
+        createElement("img", { src: activeRouteImage, alt: `Mapa trasy: ${activeRouteTitle}` })
+      );
+      return wrapper;
     }
   };
+
+  routePreview?.addEventListener("click", () => {
+    if (!activeRouteImage) return;
+    modal.classList.add("route-modal");
+    modalContent.replaceChildren(modalRenderers.route());
+    modal.showModal();
+  });
 
   document.querySelectorAll("[data-modal]").forEach((button) => {
     button.addEventListener("click", () => {
       const renderModal = modalRenderers[button.dataset.modal];
       if (!renderModal) return;
+      modal.classList.remove("route-modal");
       modalContent.replaceChildren(renderModal());
       modal.showModal();
     });
@@ -353,6 +349,7 @@ function setupModal() {
   modal.addEventListener("click", (event) => {
     if (event.target === modal) modal.close();
   });
+  modal.addEventListener("close", () => modal.classList.remove("route-modal"));
 }
 
 applyContent();
@@ -360,8 +357,6 @@ renderNavigation();
 renderHeroMeta();
 renderIntroBullets();
 renderKitFeatures();
-renderRouteStats();
-renderRouteGallery();
 renderTimeline();
 renderFaq();
 renderFooter();
