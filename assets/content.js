@@ -49,6 +49,7 @@ window.BDS_CONFIG = {
     meta: [
       { value: "21,097 km", label: "Półmaraton" },
       { value: "10 km", label: "Pyrlandzka Dycha" },
+      { value: "5 km", label: "Pyrlandzka Piątka" },
       { value: "10 km", label: "Nordic Walking" }
     ],
     imageAlt: "Półmaraton Doliną Samy, Pyrlandzka Dycha i Piątka - 13 września 2026",
