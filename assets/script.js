@@ -169,6 +169,23 @@ function renderFooter() {
   }
 }
 
+function renderSponsors() {
+  const facebookLink = document.querySelector("[data-facebook-link]");
+  if (facebookLink) {
+    facebookLink.href = getValue("footer.facebookUrl", facebookLink.href);
+  }
+
+  const wrapper = document.querySelector("[data-sponsor-logos]");
+  const sponsors = siteConfig.infoSponsors?.sponsors?.items || [];
+  if (!wrapper || !sponsors.length) return;
+
+  wrapper.replaceChildren(...sponsors.map((sponsor) => {
+    const item = createElement("div", { className: "sponsor-logo" });
+    item.append(createElement("img", { src: sponsor.logo, alt: sponsor.alt || sponsor.name }));
+    return item;
+  }));
+}
+
 function setupRegistrationLinks() {
   document.querySelectorAll("[data-registration-link]").forEach((link) => {
     link.href = registrationUrl;
@@ -348,6 +365,7 @@ renderRouteGallery();
 renderTimeline();
 renderFaq();
 renderFooter();
+renderSponsors();
 renderDistanceTabs();
 setupRegistrationLinks();
 setupMenu();

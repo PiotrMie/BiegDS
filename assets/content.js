@@ -17,6 +17,7 @@ window.BDS_CONFIG = {
   images: {
     heroLogo: "assets/img/hero.jpg",
     headerLogo: "assets/img/logo-male.jpg",
+    eneaLogo: "assets/img/logo-enea-cropped.png",
     lastEdition: "assets/img/last-edition.jpg",
     shirt: "assets/img/koszulka.jpg",
     route5: "assets/img/trasa-5.jpg",
@@ -49,7 +50,7 @@ window.BDS_CONFIG = {
     meta: [
       { value: "21,097 km", label: "Półmaraton" },
       { value: "10 km", label: "Pyrlandzka Dycha" },
-      { value: "5 km", label: "Piątka i Nordic Walking" }
+      { value: "10 km", label: "Nordic Walking" }
     ],
     imageAlt: "Półmaraton Doliną Samy, Pyrlandzka Dycha i Piątka - 13 września 2026",
     scrollCue: "Przewiń"
@@ -64,6 +65,26 @@ window.BDS_CONFIG = {
       hours: "godz.",
       minutes: "min.",
       seconds: "sek."
+    }
+  },
+  infoSponsors: {
+    facebook: {
+      kicker: "Aktualności",
+      title: "Wszystkie szczegóły na Facebooku",
+      text: "Najświeższe informacje organizacyjne, komunikaty dla zawodników i materiały z przygotowań publikujemy na profilu wydarzenia.",
+      button: "Przejdź na Facebook"
+    },
+    sponsors: {
+      kicker: "Partnerzy wydarzenia",
+      title: "Sponsorzy",
+      text: "Z energią od ENEA widzimy się na starcie",
+      items: [
+        {
+          name: "ENEA",
+          logo: "assets/img/logo-enea-cropped.png",
+          alt: "Logo ENEA"
+        }
+      ]
     }
   },
   intro: {
@@ -182,7 +203,7 @@ window.BDS_CONFIG = {
       { time: "07:00", label: "Otwarcie", title: "Biuro zawodów", text: "Odbiór numerów i pakietów startowych." },
       { time: "08:30", label: "Rozgrzewka", title: "Wspólny trening", text: "Energetyczne przygotowanie w strefie startu." },
       { time: "09:00", label: "Start główny", title: "Półmaraton", text: "21,097 km przez Dolinę Samy.", highlight: true },
-      { time: "09:30", label: "Kolejne starty", title: "10 km, 5 km i NW", text: "Pyrlandzka Dycha, Piątka i Nordic Walking." },
+      { time: "09:30", label: "Kolejne starty", title: "10 km, 5 km i NW", text: "Pyrlandzka Dycha, Piątka i Nordic Walking 10 km." },
       { time: "12:30", label: "Finał", title: "Dekoracja i piknik", text: "Nagrody, muzyka i wspólne świętowanie." }
     ]
   },

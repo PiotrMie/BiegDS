@@ -228,6 +228,60 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
 .countdown span { margin-top: 8px; color: #d6e5d3; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
 .countdown i { color: #9fbe78; font-size: 32px; font-style: normal; }
 
+.info-sponsors {
+  padding: 55px 8vw;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 24px;
+  background: #f0f5ec;
+}
+.facebook-card,
+.sponsor-card {
+  padding: 34px;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 18px 45px rgba(18,57,74,.08);
+}
+.facebook-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 28px;
+}
+.facebook-card .section-kicker,
+.sponsor-card .section-kicker { margin-bottom: 10px; }
+.facebook-card h2,
+.sponsor-card h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+.facebook-card p:not(.section-kicker),
+.sponsor-card p:not(.section-kicker) {
+  margin: 14px 0 0;
+  max-width: 620px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.facebook-card .button { grid-column: 2; grid-row: 1 / span 3; }
+.sponsor-logos { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.sponsor-logo {
+  min-width: 220px;
+  min-height: 92px;
+  padding: 18px 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.sponsor-logo img {
+  max-width: 185px;
+  max-height: 64px;
+  object-fit: contain;
+}
+
 .section { padding: 110px 8vw; }
 .section-heading { margin-bottom: 56px; }
 .section-heading.centered { text-align: center; }
@@ -495,6 +549,9 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .countdown div { min-width: 50px; }
   .countdown i { font-size: 20px; }
   .section { padding: 80px 22px; }
+  .info-sponsors { padding: 35px 22px; grid-template-columns: 1fr; }
+  .facebook-card { grid-template-columns: 1fr; }
+  .facebook-card .button { grid-column: auto; grid-row: auto; margin-top: 22px; }
   .intro-grid, .route, .kit { grid-template-columns: 1fr; }
   .intro-visual { min-height: 390px; }
   .photo-placeholder { min-height: 390px; }
