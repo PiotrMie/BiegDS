@@ -176,6 +176,9 @@ window.BDS_CONFIG = {
       routeFallback: ""
     }
   },
+  // Sekcja "Dzień zawodów" / harmonogram.
+  // Zmieniaj tutaj nagłówek sekcji oraz kolejne punkty osi czasu.
+  // highlight: true wyróżnia dany punkt kolorem pomarańczowym.
   program: {
     kicker: "Dzień zawodów",
     title: "Wszystko w",
