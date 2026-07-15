@@ -601,7 +601,7 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .hero h1 em { margin-left: 0; }
   .eyebrow { order: 1; max-width: 340px; }
   .eyebrow span { font-size: 10px; letter-spacing: .16em; }
-  .hero-title-logo { order: 3; width: min(86vw, 360px); max-height: 150px; margin-top: 8px; }
+  .hero-title-logo { order: 3; width: min(86vw, 360px); max-height: 150px; margin-top: 8px; align-self: center; object-position: center; }
   .lead { order: 4; }
   .hero-actions { order: 5; }
   .hero-art { order: 2; width: 100%; min-height: auto; margin: 0 0 22px; }
@@ -620,7 +620,7 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .intro-grid, .route, .kit { grid-template-columns: 1fr; }
   .intro-visual { min-height: 390px; }
   .photo-placeholder { min-height: 390px; }
-  .stat-card { right: 0; }
+  .stat-card { right: 0; bottom: 0; }
   .check-list { grid-template-columns: 1fr; }
   .distance-tabs { grid-template-columns: 1fr 1fr; }
   .distance-card { padding: 35px 24px; grid-template-columns: 1fr; }
