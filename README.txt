@@ -19,7 +19,9 @@ Jak edytować za rok:
   trasa-nordic.jpg, koszulka.jpg.
 - Wszystkie główne teksty strony zmienisz w pliku assets/content.js:
   menu, hero, odliczanie, Facebook, sponsorów, opis wydarzenia, dystanse,
-  harmonogram, koszulkę, FAQ, sekcję zapisów, stopkę i linki.
+  harmonogram, regulamin, koszulkę, FAQ, sekcję zapisów, stopkę i linki.
+- Regulamin wydarzenia znajduje się w folderze assets jako:
+  Regulamin-14PDSiPD_2026.pdf.
 - Jeśli pojawi się mapa półmaratonu, dodaj zdjęcie do assets/img i wpisz
   jego ścieżkę w assets/content.js przy polu half -> routeImage.
 

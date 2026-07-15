@@ -162,6 +162,13 @@ function setupRegistrationLinks() {
   });
 }
 
+function setupRulesLinks() {
+  const rulesUrl = getValue("rulesUrl");
+  document.querySelectorAll("[data-rules-link]").forEach((link) => {
+    if (rulesUrl) link.href = rulesUrl;
+  });
+}
+
 function setupMenu() {
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".main-nav");
@@ -363,6 +370,7 @@ renderFooter();
 renderSponsors();
 renderDistanceTabs();
 setupRegistrationLinks();
+setupRulesLinks();
 setupMenu();
 setupFaqBehavior();
 setupModal();

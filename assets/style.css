@@ -496,6 +496,48 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
 .kit-list span { padding: 17px 12px; border-bottom: 1px solid #cbd8c4; font-size: 13px; font-weight: 800; }
 .kit-list b { margin-right: 10px; color: var(--coral); }
 
+.rules {
+  background: linear-gradient(180deg, #f6fbfd, #fff8df);
+}
+.rules-panel {
+  max-width: 1080px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 42px;
+  align-items: start;
+}
+.rules-panel > div:first-child p {
+  max-width: 620px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.rules-facts {
+  display: grid;
+  gap: 14px;
+}
+.rules-facts article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,.72);
+}
+.rules-facts small {
+  color: var(--coral);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.rules-facts p {
+  margin: 9px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
 .faq { background: var(--paper); }
 .accordion { max-width: 900px; margin: auto; border-top: 1px solid var(--line); }
 .accordion details { border-bottom: 1px solid var(--line); }
@@ -620,7 +662,7 @@ em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
   .info-sponsors { padding: 35px 22px; grid-template-columns: 1fr; }
   .facebook-card { grid-template-columns: 1fr; }
   .facebook-card .button { grid-column: auto; grid-row: auto; margin-top: 22px; }
-  .intro-grid, .route, .kit { grid-template-columns: 1fr; }
+  .intro-grid, .route, .kit, .rules-panel { grid-template-columns: 1fr; }
   .intro-visual { min-height: 390px; }
   .photo-placeholder { min-height: 390px; }
   .stat-card { right: 0; bottom: 0; }
